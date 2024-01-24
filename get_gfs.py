@@ -41,7 +41,7 @@ def get_gfs_data(datestr, utc_hour, area, verbose=False):
     url_base = 'http://nomads.ncep.noaa.gov/cgi-bin/' \
         'filter_gens.pl?dir=%2Fgefs.'
 
-    llon, rlon, llat, blat = area
+    llon, rlon, tlat, blat = area
 
     good_day = None
     good_init = None
