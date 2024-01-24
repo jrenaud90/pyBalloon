@@ -51,7 +51,7 @@ def get_gfs_data(datestr, utc_hour, area, verbose=False):
 
         url = url_base+day
         req = requests.get(url)
-        text = req.content.split('</a>')
+        text = str(req.content).split('</a>')
         available_inits = []
         for t in text:
             if 'gefs' in t:
