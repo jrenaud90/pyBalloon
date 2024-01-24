@@ -32,7 +32,7 @@ def get_gfs_data(datestr, utc_hour, area, verbose=False):
         print(f"Could not connect! Error code: {req.status}, {req.reason}.")
         sys.exit()
 
-    text = req.content.split('</a>')
+    text = str(req.content).split('</a>')
     available_days = []
     for t in text:
         if 'gefs' in t:
