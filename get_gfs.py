@@ -28,6 +28,7 @@ def get_gfs_data(datestr, utc_hour, area, verbose=False):
     # 
     url = 'http://nomads.ncep.noaa.gov/cgi-bin/filter_gens.pl'
     req = requests.get(url)
+    breakpoint()
     if req.error is not None:
         print("Could not connect! Error code: " % req.error)
         sys.exit()
