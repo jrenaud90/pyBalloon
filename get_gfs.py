@@ -28,9 +28,8 @@ def get_gfs_data(datestr, utc_hour, area, verbose=False):
     # 
     url = 'http://nomads.ncep.noaa.gov/cgi-bin/filter_gens.pl'
     req = requests.get(url)
-    breakpoint()
-    if req.error is not None:
-        print("Could not connect! Error code: " % req.error)
+    if req.status_code != 200:
+        print(f"Could not connect! Error code: {req.status}, {req.reason}.")
         sys.exit()
 
     text = req.content.split('</a>')
